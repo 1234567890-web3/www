@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Album - Music</title>
-  <meta name="description" content="">
+  <title>ZZZ Daily - Wake Up Sleepy Head - Music Album</title>
+  <meta name="description" content="Era-Based, Doom Metal - End Times Music For The Soul">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#7c3aed">
+  <meta name="theme-color" content="#8b0000">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="album">
+  <meta name="apple-mobile-web-app-title" content="unicorns">
   <link rel="apple-touch-icon" href="icon-192.png">
   <link rel="icon" href="favicon.ico">
   <meta http-equiv="Content-Security-Policy" content="media-src 'self' https://*">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+    
     :root {
-      /* defaults — overridden at runtime by applyTheme() */
       --background: #0c0a1a;
       --foreground: #f0e6ff;
       --primary-purple: #7c3aed;
@@ -30,23 +31,21 @@
       --rainbow-mid: #a78bfa;
       --rainbow-end: #93c5fd;
       --magic-glow: rgba(167, 139, 250, 0.4);
-      --font-title: 'Cinzel Decorative', serif;
-      --font-body: 'Quicksand', 'Segoe UI', sans-serif;
       --spacing: 1rem;
       --container-md: 448px;
     }
-
+    
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
+    
     body {
       background: var(--background);
       color: var(--foreground);
-      font-family: var(--font-body);
+      font-family: 'Quicksand', 'Segoe UI', sans-serif;
       overflow-x: hidden;
       min-height: 100vh;
     }
-
+    
     img {
         max-width: 100%;
         height: auto;
@@ -66,28 +65,28 @@
     .overflow-hidden { overflow: hidden; }
     .relative { position: relative; }
     .min-h-screen { min-height: 100vh; }
-
+    
     .rounded-2xl { border-radius: 1rem; }
-
+    
     .shadow-lg {
       box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.15),
                   0 4px 6px -2px rgba(124, 58, 237, 0.1);
     }
-
+    
     .shadow-blood-500\/20 {
       box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.2),
                   0 4px 6px -2px rgba(167, 139, 250, 0.15);
     }
-
+    
     .border {
       border-width: 1px;
       border-style: solid;
     }
-
+    
     .border-blood-500\/20 {
       border-color: rgba(167, 139, 250, 0.25);
     }
-
+    
     .video-background {
       position: fixed;
       top: 0;
@@ -97,7 +96,7 @@
       z-index: 0;
       overflow: hidden;
     }
-
+    
     #bgVideo {
       position: absolute;
       top: 50%;
@@ -109,7 +108,7 @@
       transform: translate(-50%, -50%);
       object-fit: cover;
     }
-
+    
     .video-overlay {
       position: absolute;
       top: 0;
@@ -123,13 +122,13 @@
         rgba(12, 10, 26, 0.85) 100%
       );
     }
-
+    
     /* Floating sparkle particles */
     .video-overlay::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-image:
+      background-image: 
         radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.6), transparent),
         radial-gradient(1px 1px at 30% 60%, rgba(244,114,182,0.5), transparent),
         radial-gradient(1.5px 1.5px at 50% 10%, rgba(167,139,250,0.6), transparent),
@@ -141,21 +140,21 @@
       background-size: 200px 200px;
       animation: sparkleFloat 20s linear infinite;
     }
-
+    
     @keyframes sparkleFloat {
       0% { transform: translateY(0); }
       100% { transform: translateY(-200px); }
     }
-
+    
     .container {
       position: relative; z-index: 1;
       max-width: 1200px; margin: 0 auto; padding: 20px;
     }
-
+    
     header { text-align: center; padding: 40px 20px; }
-
+    
     h1 {
-      font-family: var(--font-title);
+      font-family: 'Cinzel Decorative', serif;
       font-size: 3.2rem;
       background: linear-gradient(135deg, #f9a8d4, #c4b5fd, #93c5fd, #fbbf24);
       background-size: 300% 300%;
@@ -165,12 +164,12 @@
       text-shadow: none;
       filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.3));
     }
-
+    
     @keyframes rainbowShift {
       0%, 100% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
     }
-
+    
     .subtitle {
       color: var(--pastel-lavender);
       font-size: 1.2rem;
@@ -178,46 +177,46 @@
       font-weight: 500;
       letter-spacing: 0.5px;
     }
-
+    
     .lang-selector {
       display: inline-block; padding: 8px 16px;
       background: rgba(124, 58, 237, 0.2);
       border: 1px solid rgba(167, 139, 250, 0.3);
       border-radius: 20px; color: var(--foreground);
       font-size: 0.9rem; cursor: pointer; transition: all 0.3s;
-      font-family: var(--font-body);
+      font-family: 'Quicksand', sans-serif;
     }
     .lang-selector:hover {
       background: rgba(124, 58, 237, 0.35);
       border-color: rgba(167, 139, 250, 0.5);
       box-shadow: 0 0 15px rgba(167, 139, 250, 0.2);
     }
-
+    
     .track-count {
       display: inline-block; margin-left: 10px;
       color: rgba(196, 181, 253, 0.6); font-size: 0.85rem;
     }
-
+    
     .player {
       background: linear-gradient(180deg, rgba(30, 17, 69, 0.92), rgba(76, 29, 149, 0.85));
       backdrop-filter: blur(24px);
       border: 1px solid rgba(167, 139, 250, 0.25);
       border-radius: 28px; padding: 30px;
       margin: 30px auto; max-width: 800px;
-      box-shadow:
+      box-shadow: 
         0 20px 60px rgba(124, 58, 237, 0.25),
         0 0 80px rgba(167, 139, 250, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
-
+    
     .track-info { text-align: center; margin-bottom: 20px; }
-
+    
     #trackTitle {
-      font-family: var(--font-title);
+      font-family: 'Cinzel Decorative', serif;
       font-size: 1.4rem; color: var(--starlight); margin-bottom: 5px;
       letter-spacing: 0.5px;
     }
-
+    
     .featured-badge, .alt-badge {
       display: inline-block; padding: 4px 14px;
       border-radius: 20px; font-size: 0.75rem; margin-top: 8px;
@@ -233,13 +232,13 @@
       border: 1px solid rgba(167, 139, 250, 0.35);
       color: var(--pastel-lavender);
     }
-
+    
     #visualizer {
       width: 100%; height: 80px; border-radius: 16px;
       margin: 15px 0; background: rgba(12, 10, 26, 0.5);
       border: 1px solid rgba(167, 139, 250, 0.1);
     }
-
+    
     /* Lyrics Panel */
     .lyrics-panel {
       margin: 15px 0;
@@ -247,32 +246,32 @@
       border-radius: 20px;
       overflow: hidden;
     }
-
+    
     .lyrics-toggle {
       width: 100%; padding: 12px 20px;
       background: rgba(124, 58, 237, 0.15);
       border: none; border-radius: 0;
       color: var(--foreground); cursor: pointer;
-      font-size: 0.95rem; font-family: var(--font-body);
+      font-size: 0.95rem; font-family: 'Quicksand', sans-serif;
       display: flex; align-items: center; justify-content: space-between;
       transition: background 0.3s;
       font-weight: 500;
     }
     .lyrics-toggle:hover { background: rgba(124, 58, 237, 0.25); }
     .lyrics-toggle.open { background: rgba(251, 191, 36, 0.1); color: var(--gold-accent); }
-
+    
     .lyrics-content {
       max-height: 350px; overflow-y: auto;
       padding: 20px; background: rgba(12, 10, 26, 0.5);
       transition: max-height 0.3s;
     }
     .lyrics-content.hidden { max-height: 0; padding: 0 20px; overflow: hidden; }
-
+    
     .lyrics-text { line-height: 1.8; font-size: 0.95rem; white-space: pre-wrap; }
     .lyrics-text .section-header {
       color: var(--gold-accent); font-weight: 600;
       margin-top: 16px; margin-bottom: 4px;
-      font-family: var(--font-title); font-size: 0.8rem;
+      font-family: 'Cinzel Decorative', serif; font-size: 0.8rem;
     }
     .lyrics-text .song-title {
       color: var(--starlight); font-weight: 700;
@@ -288,12 +287,12 @@
     .lyrics-unavailable {
       text-align: center; padding: 30px; color: rgba(196, 181, 253, 0.4);
     }
-
+    
     .controls {
       display: flex; align-items: center;
       justify-content: center; gap: 15px; margin: 20px 0;
     }
-
+    
     button {
       background: linear-gradient(135deg, var(--deep-purple), var(--primary-purple));
       border: 1px solid rgba(167, 139, 250, 0.35);
@@ -307,23 +306,23 @@
       box-shadow: 0 0 25px rgba(167, 139, 250, 0.5);
     }
     button:active { transform: scale(0.95); }
-
+    
     #playPauseBtn {
       width: 70px; height: 70px; font-size: 1.8rem;
       background: linear-gradient(135deg, var(--soft-pink), var(--primary-purple));
       box-shadow: 0 4px 20px rgba(244, 114, 182, 0.3);
     }
-
+    
     .small-btn { width: 40px; height: 40px; font-size: 1rem; }
-
+    
     button.active {
       background: linear-gradient(135deg, var(--gold-accent), #f59e0b);
       color: #1e1145;
       box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
     }
-
+    
     .progress-container { margin: 15px 0; }
-
+    
     .progress-bar {
       width: 100%; height: 6px;
       background: rgba(167, 139, 250, 0.15);
@@ -340,7 +339,7 @@
       margin-top: 8px; font-size: 0.85rem;
       color: rgba(196, 181, 253, 0.6);
     }
-
+    
     .volume-control {
       display: flex; align-items: center; gap: 10px; margin: 15px 0;
     }
@@ -350,7 +349,7 @@
       border-radius: 2px; outline: none; cursor: pointer;
       accent-color: var(--pastel-lavender);
     }
-
+    
     .share-controls {
       display: flex;
       align-items: center;
@@ -359,14 +358,14 @@
       padding: 10px 0;
       border-top: 1px solid rgba(167, 139, 250, 0.15);
     }
-
+    
     .share-label {
       font-size: 0.9rem;
       color: var(--foreground);
       opacity: 0.8;
       margin-right: 5px;
     }
-
+    
     .share-btn {
       background: rgba(124, 58, 237, 0.12);
       border: 1px solid rgba(167, 139, 250, 0.25);
@@ -380,25 +379,25 @@
       justify-content: center;
       transition: all 0.2s ease;
     }
-
+    
     .share-btn:hover {
       background: rgba(124, 58, 237, 0.25);
       border-color: rgba(167, 139, 250, 0.45);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(167, 139, 250, 0.2);
     }
-
+    
     .share-btn:active { transform: translateY(0); }
     .share-btn svg { opacity: 0.9; }
     .share-btn:hover svg { opacity: 1; }
-
+    
     .track-list {
       max-width: 1000px; margin: 40px auto;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 12px;
     }
-
+    
     .track-item {
       background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(30, 17, 69, 0.2));
       border: 1px solid rgba(167, 139, 250, 0.15);
@@ -419,9 +418,9 @@
     }
     .track-item.is-alt { opacity: 0.75; }
     .track-item.is-alt:hover { opacity: 1; }
-
+    
     .track-number {
-      font-family: var(--font-title);
+      font-family: 'Cinzel Decorative', serif;
       color: var(--gold-accent); font-weight: 600;
       min-width: 40px; font-size: 0.85rem;
     }
@@ -436,16 +435,16 @@
       background: rgba(244, 114, 182, 0.15);
       padding: 2px 6px; border-radius: 4px;
     }
-
+    
     .play-btn-small { width: 32px; height: 32px; font-size: 0.9rem; }
-
+    
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: rgba(124, 58, 237, 0.1); }
     ::-webkit-scrollbar-thumb {
       background: linear-gradient(180deg, var(--soft-pink), var(--deep-purple));
       border-radius: 3px;
     }
-
+    
     .download-section {
       max-width: 800px; margin: 40px auto; padding: 30px;
       background: linear-gradient(180deg, rgba(30, 17, 69, 0.92), rgba(76, 29, 149, 0.85));
@@ -455,7 +454,7 @@
       box-shadow: 0 20px 60px rgba(124, 58, 237, 0.2);
     }
     .download-heading {
-      font-family: var(--font-title); font-size: 1.8rem;
+      font-family: 'Cinzel Decorative', serif; font-size: 1.8rem;
       background: linear-gradient(135deg, var(--starlight), var(--gold-accent), var(--soft-pink));
       background-clip: text; -webkit-background-clip: text; color: transparent;
       text-align: center; margin-bottom: 10px;
@@ -491,7 +490,7 @@
       box-shadow: 0 4px 20px rgba(244, 114, 182, 0.3);
     }
     .download-info h3 {
-      font-family: var(--font-title);
+      font-family: 'Cinzel Decorative', serif;
       font-size: 1.3rem; color: var(--starlight); margin-bottom: 8px;
     }
     .download-count {
@@ -506,7 +505,7 @@
       margin-top: 10px; text-align: center;
       font-size: 0.85rem; color: rgba(196, 181, 253, 0.5);
     }
-
+    
     .download-btn-small {
       width: 32px; height: 32px;
       display: flex; align-items: center; justify-content: center;
@@ -528,7 +527,7 @@
       display: inline-flex; align-items: center; gap: 3px;
       margin-left: 8px;
     }
-
+    
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       #trackTitle { font-size: 1.2rem; }
@@ -536,7 +535,7 @@
       .controls { gap: 10px; }
       #playPauseBtn { width: 60px; height: 60px; font-size: 1.5rem; }
     }
-
+    
     .cookie-consent {
       position: fixed;
       bottom: 0;
@@ -549,7 +548,7 @@
       z-index: 10000;
       box-shadow: 0 -4px 30px rgba(124, 58, 237, 0.3);
     }
-
+    
     .cookie-content {
       max-width: 1000px;
       margin: 0 auto;
@@ -559,7 +558,7 @@
       gap: 20px;
       flex-wrap: wrap;
     }
-
+    
     .cookie-content p {
       color: var(--foreground);
       margin: 0;
@@ -567,58 +566,58 @@
       flex: 1;
       min-width: 250px;
     }
-
+    
     .cookie-buttons {
       display: flex;
       gap: 10px;
     }
-
+    
     .cookie-btn {
       padding: 10px 24px;
       border: none;
       border-radius: 20px;
       cursor: pointer;
-      font-family: var(--font-body);
+      font-family: 'Quicksand', sans-serif;
       font-size: 1rem;
       font-weight: 600;
       transition: all 0.2s;
     }
-
+    
     .cookie-btn.accept {
       background: linear-gradient(135deg, var(--gold-accent), #f59e0b);
       color: #1e1145;
     }
-
+    
     .cookie-btn.accept:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
     }
-
+    
     .cookie-btn.decline {
       background: rgba(124, 58, 237, 0.2);
       color: var(--foreground);
       border: 1px solid rgba(167, 139, 250, 0.3);
     }
-
+    
     .cookie-btn.decline:hover {
       background: rgba(124, 58, 237, 0.35);
     }
-
+    
     @media (max-width: 768px) {
       .cookie-content {
         flex-direction: column;
         align-items: stretch;
       }
-
+    
       .cookie-buttons {
         width: 100%;
       }
-
+    
       .cookie-btn {
         flex: 1;
       }
     }
-
+    
     /* Footer Styles */
     .site-footer {
       background: linear-gradient(180deg, rgba(12, 10, 26, 0.98), #050311);
@@ -627,7 +626,7 @@
       margin-top: 4rem;
       position: relative;
     }
-
+    
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -635,20 +634,20 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
       gap: 2rem;
     }
-
+    
     .footer-section h3 {
       color: var(--pastel-lavender);
       font-size: 1.2rem;
       margin-bottom: 1rem;
       font-weight: 600;
     }
-
+    
     .footer-links {
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
     }
-
+    
     .footer-links a,
     .footer-link-btn {
       color: rgba(196, 181, 253, 0.7);
@@ -662,29 +661,29 @@
       cursor: pointer;
       font-family: inherit;
     }
-
+    
     .footer-links a:hover,
     .footer-link-btn:hover {
       color: var(--gold-accent);
     }
-
+    
     .copyright {
       color: rgba(196, 181, 253, 0.5);
       font-size: 0.9rem;
       margin-top: 1rem;
     }
-
+    
     @media (max-width: 768px) {
       .site-footer {
         padding: 2rem 1rem 1.5rem;
       }
-
+    
       .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
     }
-
+    
     /* Modal Styles */
     .modal {
       display: none;
@@ -696,11 +695,11 @@
       z-index: 9999;
       animation: fadeIn 0.3s ease;
     }
-
+    
     .modal.active {
       display: block;
     }
-
+    
     .modal-backdrop {
       position: absolute;
       top: 0;
@@ -710,7 +709,7 @@
       background: rgba(5, 3, 17, 0.85);
       backdrop-filter: blur(6px);
     }
-
+    
     .modal-content {
       position: absolute;
       top: 50%;
@@ -727,7 +726,7 @@
       box-shadow: 0 20px 60px rgba(124, 58, 237, 0.3);
       animation: slideUp 0.3s ease;
     }
-
+    
     .modal-close {
       position: absolute;
       top: 1rem;
@@ -746,57 +745,57 @@
       justify-content: center;
       line-height: 1;
     }
-
+    
     .modal-close:hover {
       background: rgba(244, 114, 182, 0.3);
       transform: rotate(90deg);
     }
-
+    
     .modal-content h2 {
       color: var(--pastel-lavender);
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
       padding-right: 2rem;
-      font-family: var(--font-title);
+      font-family: 'Cinzel Decorative', serif;
     }
-
+    
     .modal-content h3 {
       color: var(--gold-accent);
       font-size: 1.3rem;
       margin-top: 1.5rem;
       margin-bottom: 0.75rem;
     }
-
+    
     .modal-section {
       margin-bottom: 1.5rem;
     }
-
+    
     .modal-section p {
       color: rgba(196, 181, 253, 0.85);
       line-height: 1.6;
       margin-bottom: 0.75rem;
     }
-
+    
     .modal-section ul {
       color: rgba(196, 181, 253, 0.85);
       line-height: 1.8;
       padding-left: 1.5rem;
     }
-
+    
     .modal-section li {
       margin-bottom: 0.5rem;
     }
-
+    
     .modal-section a {
       color: var(--gold-accent);
       text-decoration: none;
       transition: color 0.3s ease;
     }
-
+    
     .modal-section a:hover {
       color: #fcd34d;
     }
-
+    
     /* Wallet Address Styles */
     .wallet-address {
       display: flex;
@@ -809,7 +808,7 @@
       padding: 0.75rem;
       margin: 0.75rem 0;
     }
-
+    
     .wallet-address code {
       flex: 1;
       font-family: 'Courier New', monospace;
@@ -817,7 +816,7 @@
       color: var(--foreground);
       word-break: break-all;
     }
-
+    
     .copy-btn {
       background: rgba(124, 58, 237, 0.3);
       border: 1px solid rgba(167, 139, 250, 0.35);
@@ -832,18 +831,18 @@
       font-size: 0.9rem;
       white-space: nowrap;
     }
-
+    
     .copy-btn:hover {
       background: rgba(124, 58, 237, 0.45);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(167, 139, 250, 0.2);
     }
-
+    
     .copy-btn.copied {
       background: rgba(16, 185, 129, 0.3);
       border-color: rgba(16, 185, 129, 0.5);
     }
-
+    
     .donate-link {
       display: inline-block;
       background: rgba(124, 58, 237, 0.25);
@@ -855,19 +854,19 @@
       transition: all 0.3s ease;
       margin-top: 0.5rem;
     }
-
+    
     .donate-link:hover {
       background: rgba(124, 58, 237, 0.4);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(167, 139, 250, 0.2);
     }
-
+    
     /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
+    
     @keyframes slideUp {
       from {
         transform: translate(-50%, -40%);
@@ -878,7 +877,7 @@
         opacity: 1;
       }
     }
-
+    
     /* Mobile Responsive */
     @media (max-width: 768px) {
       .modal-content {
@@ -886,150 +885,68 @@
         padding: 1.5rem;
         max-height: 90vh;
       }
-
+    
       .modal-content h2 {
         font-size: 1.5rem;
       }
-
+    
       .modal-content h3 {
         font-size: 1.1rem;
       }
-
+    
       .wallet-address {
         flex-direction: column;
         align-items: stretch;
       }
-
+    
       .wallet-address code {
         font-size: 0.8rem;
       }
-
+    
       .copy-btn {
         width: 100%;
         justify-content: center;
       }
     }
-
+    
     /* Scrollbar Styling for Modal Content */
     .modal-content::-webkit-scrollbar {
       width: 8px;
     }
-
+    
     .modal-content::-webkit-scrollbar-track {
       background: rgba(12, 10, 26, 0.3);
       border-radius: 4px;
     }
-
+    
     .modal-content::-webkit-scrollbar-thumb {
       background: rgba(167, 139, 250, 0.4);
       border-radius: 4px;
     }
-
+    
     .modal-content::-webkit-scrollbar-thumb:hover {
       background: rgba(167, 139, 250, 0.6);
     }
-  </style>
-  <script>
-    // @@ALBUM_STUDIO_CONFIG_START@@
-    const ALBUM_CONFIG = {
-      // IDENTITY
-      name:           "Unicorns",
-      subtitle:       "Greatest Of All Time",
-      domain:         "greatest.web3",
-      description:    "Pop, Dance, Booty Shaker, Hypnotic, Euphoric, Happy, Jazz.",
-      featuredId:     21,
-      ga4Id:          "",
-      swCacheName:    "unicorns-v1.0.0",
-
-      // THEME — drives all :root CSS variables
-      colors: {
-        background:     "#0c0a1a",
-        foreground:     "#f0e6ff",
-        primaryPurple:  "#7c3aed",
-        deepPurple:     "#4c1d95",
-        softPink:       "#f472b6",
-        pastelBlue:     "#93c5fd",
-        pastelLavender: "#c4b5fd",
-        dreamIndigo:    "#1e1145",
-        goldAccent:     "#fbbf24",
-        starlight:      "#f5f3ff",
-        rainbowStart:   "#f472b6",
-        rainbowMid:     "#a78bfa",
-        rainbowEnd:     "#93c5fd",
-        magicGlow:      "rgba(167,139,250,0.4)"
-      },
-
-      // TYPOGRAPHY
-      titleFont:      "'Cinzel Decorative', serif",
-      bodyFont:       "'Quicksand', 'Segoe UI', sans-serif",
-      googleFontsUrl: "https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap",
-
-      // BACKGROUND
-      bgImage: "bg.gif",
-
-      // TRACK / LYRICS LOADING
-      trackPrefix:  "",
-      lyricsPrefix: "",
-
-      // SOCIAL SHARE
-      shareTitle: "Unicorns - A Beautiful Treasure",
-      shareText:  "Check out Unicorns - A Beautiful Treasure",
-
-      // DOWNLOAD SECTION
-      downloadUrl:    "https://www.dropbox.com/scl/fi/acltu285avorozjlln69c/unicorns.zip?rlkey=4te91chzt4rscmljtbp8h5ge6&st=j8z707ze&dl=0",
-      downloadTracks: 16,
-      downloadSize:   "~65 MB",
-
-      // FOOTER LINKS
-      archiveUrl:       "https://archive.ychive.com",
-      imagesUrl:        "https://images.zzzdaily.com",
-      secondAlbumUrl:   "https://confliction.ychive.com",
-      secondAlbumLabel: "Second Album",
-      copyrightOwner:   "YChive",
-      copyrightYear:    "2026",
-
-      // DONATE MODAL
-      btcAddress: "bc1q29fj9f8nv4cjgxp3gpedrznhc548fqvczjk03x",
-      ethAddress: "0x507A5f6b786D44Aa324Cee16e645FA51Ed522aC2",
-      solAddress: "37q4SYfPrigwySEgb9i8YmpHKiAMKXuHKjqwLnABzf8i",
-      btcImage:   "BTC.gif",
-      ethImage:   "ETH.gif",
-      solImage:   "SOL.gif",
-
-      // ABOUT MODAL / VERSION HISTORY
-      currentCid:    "QmPWrG4PV7gmsM9p4me9bxPYCwtapttv9PtTshJvPy5RdM",
-      publishedDate: "February 9, 2026 at 12:00 UTC",
-      totalTracks:   "22 audio files + lyrics",
-      totalSize:     "~65 MB",
-      prevCid:       "QmaiwpH7P52ZWbUu1DwSvjLjAtbpQCrZojHJ22hXW4y5Gj",
-      prevLabel:     "Previous (698.web3)",
-      nextCid:       "QmQrB77q1Z4yYSfueGsipE8CSLRb9Ky1Mr3FkCwUVnrpCh",
-      nextLabel:     "Next (asteroid.pack)"
-    };
-    // @@ALBUM_STUDIO_CONFIG_END@@
-
-    function applyTheme() {
-      const r = document.documentElement;
-      const c = ALBUM_CONFIG.colors;
-      r.style.setProperty('--background',       c.background);
-      r.style.setProperty('--foreground',       c.foreground);
-      r.style.setProperty('--primary-purple',   c.primaryPurple);
-      r.style.setProperty('--deep-purple',      c.deepPurple);
-      r.style.setProperty('--soft-pink',        c.softPink);
-      r.style.setProperty('--pastel-blue',      c.pastelBlue);
-      r.style.setProperty('--pastel-lavender',  c.pastelLavender);
-      r.style.setProperty('--dream-indigo',     c.dreamIndigo);
-      r.style.setProperty('--gold-accent',      c.goldAccent);
-      r.style.setProperty('--starlight',        c.starlight);
-      r.style.setProperty('--rainbow-start',    c.rainbowStart);
-      r.style.setProperty('--rainbow-mid',      c.rainbowMid);
-      r.style.setProperty('--rainbow-end',      c.rainbowEnd);
-      r.style.setProperty('--magic-glow',       c.magicGlow);
-      r.style.setProperty('--font-title',       ALBUM_CONFIG.titleFont);
-      r.style.setProperty('--font-body',        ALBUM_CONFIG.bodyFont);
+    
+    /* Unicorn image gallery hint */
+    .unicorn-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 20px 0;
     }
-    applyTheme();
-
+    .unicorn-gallery img {
+      border-radius: 16px;
+      border: 2px solid rgba(167, 139, 250, 0.2);
+      transition: all 0.3s;
+    }
+    .unicorn-gallery img:hover {
+      border-color: rgba(244, 114, 182, 0.5);
+      transform: scale(1.03);
+      box-shadow: 0 8px 25px rgba(244, 114, 182, 0.2);
+    }
+      </style>
+  <script type="text/javascript">
     // Query parameter handling
     function parseUrlParams() {
       const params = new URLSearchParams(window.location.search);
@@ -1070,6 +987,8 @@
         modal.classList.add('active');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+
+        // ESC key to close
         document.addEventListener('keydown', handleEscKey);
       }
     }
@@ -1097,9 +1016,12 @@
     async function copyToClipboard(text, button) {
       try {
         await navigator.clipboard.writeText(text);
+
+        // Visual feedback
         const originalText = button.querySelector('.copy-text').textContent;
         button.querySelector('.copy-text').textContent = 'Copied!';
         button.classList.add('copied');
+
         setTimeout(() => {
           button.querySelector('.copy-text').textContent = originalText;
           button.classList.remove('copied');
@@ -1122,8 +1044,8 @@
 
   <div class="container" style="margin-top: 33%; margin-bottom: 33%;">
     <header>
-      <h1 id="albumTitle">Album</h1>
-      <p class="subtitle" id="albumSubtitle">Loading...</p>
+      <h1>ZZZ Daily</h1>
+      <p class="subtitle">Wake Up Sleepy Head</p>
       <select class="lang-selector" id="langSelector">
         <option value="all">All Languages</option>
         <option value="en">English</option>
@@ -1144,7 +1066,7 @@
         <option value="he">עברית</option>
         <option value="fa">فارسی</option>
       </select>
-      <span class="track-count" id="trackCount">0 tracks</span>
+      <span class="track-count" id="trackCount">16/9 tracks</span>
     </header>
 
     <div class="player">
@@ -1217,9 +1139,9 @@
 
     <div class="download-section">
       <h2 class="download-heading">Download Album</h2>
-      <p class="download-description" id="downloadDesc">Get the complete album with all tracks and lyrics</p>
+      <p class="download-description">Get the complete unicorns album with all tracks and lyrics</p>
       <div class="download-grid">
-        <a id="downloadLink" href="#" class="download-card" target="_blank" rel="noopener">
+        <a href="https://www.dropbox.com/scl/fi/acltu285avorozjlln69c/unicorns.zip?rlkey=4te91chzt4rscmljtbp8h5ge6&st=j8z707ze&dl=0" class="download-card">
           <div class="download-icon">
             <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
@@ -1227,13 +1149,13 @@
           </div>
           <div class="download-info">
             <h3>Complete Album</h3>
-            <p class="download-count" id="downloadTrackCount">16 Tracks</p>
-            <p class="download-size" id="downloadSizeDisplay">~65 MB</p>
+            <p class="download-count">16 Tracks</p>
+            <p class="download-size">~65 MB</p>
           </div>
         </a>
       </div>
     </div>
-
+    
   </div>
 
   <!-- Footer -->
@@ -1242,9 +1164,9 @@
       <div class="footer-section">
         <h3>More Sites</h3>
         <div class="footer-links">
-          <a id="footerArchiveLink" href="#" target="_blank" rel="noopener">Archive</a>
-          <a id="footerImagesLink" href="#" target="_blank" rel="noopener">Images</a>
-          <a id="footerSecondAlbumLink" href="#" target="_blank" rel="noopener">Second Album</a>
+          <a href="https://archive.ychive.com" target="_blank" rel="noopener">Archive</a>
+          <a href="https://images.zzzdaily.com" target="_blank" rel="noopener">Images</a>
+          <a href="https://confliction.ychive.com" target="_blank" rel="noopener">Second Album</a>
         </div>
       </div>
 
@@ -1259,7 +1181,7 @@
       </div>
 
       <div class="footer-section">
-        <p class="copyright" id="footerCopyright">&copy; 2026 YChive. All rights reserved.</p>
+        <p class="copyright">&copy; 2026 YChive. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -1291,30 +1213,40 @@
         <h3>More Sites Network</h3>
         <p>Part of the YChive network of decentralized content platforms:</p>
         <ul>
-          <li><a id="aboutArchiveLink" href="#" target="_blank">Archive</a></li>
-          <li><a id="aboutImagesLink" href="#" target="_blank">Images</a></li>
-          <li><a id="aboutSecondAlbumLink" href="#" target="_blank">Second Album - Music tracks</a></li>
+          <li><a href="https://archive.ychive.com" target="_blank">Archive</a></li>
+          <li><a href="https://images.zzzdaily.com" target="_blank">Images</a></li>
+          <li><a href="https://confliction.ychive.com" target="_blank">Second Album</a> - Music tracks</li>
         </ul>
       </div>
 
       <div class="modal-section" style="border-top: 1px solid rgba(139, 0, 0, 0.3); padding-top: 1.5rem; margin-top: 2rem;">
-        <h3>Site Metadata &amp; Version History</h3>
+        <h3>Site Metadata & Version History</h3>
 
         <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Current Version:</strong></p>
         <div class="wallet-address" style="margin-bottom: 1.5rem;">
-          <code id="aboutCurrentCid" style="font-size: 0.75rem;"></code>
-          <button onclick="copyToClipboard(this.closest('.wallet-address').querySelector('code').textContent, this)" class="copy-btn" aria-label="Copy CID">
+          <code style="font-size: 0.75rem;">QmPWrG4PV7gmsM9p4me9bxPYCwtapttv9PtTshJvPy5RdM</code>
+          <button onclick="copyToClipboard('QmPWrG4PV7gmsM9p4me9bxPYCwtapttv9PtTshJvPy5RdM', this)" class="copy-btn" aria-label="Copy CID">
             <span class="copy-icon">📋</span>
             <span class="copy-text">Copy</span>
           </button>
         </div>
 
-        <p id="aboutMeta" style="font-size: 0.85rem; color: rgba(224, 231, 255, 0.7); margin-bottom: 1rem;"></p>
+        <p style="font-size: 0.85rem; color: rgba(224, 231, 255, 0.7); margin-bottom: 1rem;">
+          <strong>Published:</strong> February 9, 2026 at 12:00 UTC<br>
+          <strong>Protocol:</strong> IPFS (InterPlanetary File System)<br>
+          <strong>Network:</strong> Decentralized peer-to-peer storage<br>
+          <strong>Tracks:</strong> 22 audio files + lyrics<br>
+          <strong>Total Size:</strong> ~65 MB
+        </p>
 
         <p style="font-size: 0.9rem; margin-bottom: 0.75rem;"><strong>Version History:</strong></p>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <a id="aboutPrevLink" href="#" target="_blank" class="donate-link" style="padding: 0.5rem 1rem; font-size: 0.85rem; margin: 0;"></a>
-          <a id="aboutNextLink" href="#" target="_blank" class="donate-link" style="padding: 0.5rem 1rem; font-size: 0.85rem; margin: 0;"></a>
+          <a href="https://ipfs.io/ipfs/QmaiwpH7P52ZWbUu1DwSvjLjAtbpQCrZojHJ22hXW4y5Gj/" target="_blank" class="donate-link" style="padding: 0.5rem 1rem; font-size: 0.85rem; margin: 0;">
+            <span style="opacity: 0.7;">←</span> Previous (698.web3)
+          </a>
+          <a href="https://ipfs.io/ipfs/QmQrB77q1Z4yYSfueGsipE8CSLRb9Ky1Mr3FkCwUVnrpCh/" target="_blank" class="donate-link" style="padding: 0.5rem 1rem; font-size: 0.85rem; margin: 0;">
+            Next (asteroid.pack) <span style="opacity: 0.7;">→</span>
+          </a>
         </div>
 
         <p style="font-size: 0.75rem; color: rgba(224, 231, 255, 0.5); margin-top: 1.5rem; font-style: italic;">
@@ -1338,9 +1270,9 @@
       <div class="modal-section">
         <h3>Bitcoin (BTC)</h3>
         <div class="wallet-address">
-          <img id="donateBtcImg" src="BTC.gif" />
-          <code id="donateBtcCode"></code>
-          <button onclick="copyToClipboard(this.closest('.wallet-address').querySelector('code').textContent, this)" class="copy-btn" aria-label="Copy Bitcoin address">
+          <img src="BTC.gif" />
+          <code>bc1q29fj9f8nv4cjgxp3gpedrznhc548fqvczjk03x</code>
+          <button onclick="copyToClipboard('bc1q29fj9f8nv4cjgxp3gpedrznhc548fqvczjk03x', this)" class="copy-btn" aria-label="Copy Bitcoin address">
             <span class="copy-icon">📋</span>
             <span class="copy-text">Copy</span>
           </button>
@@ -1350,9 +1282,9 @@
       <div class="modal-section">
         <h3>Ethereum (ETH)</h3>
         <div class="wallet-address">
-          <img id="donateEthImg" src="ETH.gif" />
-          <code id="donateEthCode"></code>
-          <button onclick="copyToClipboard(this.closest('.wallet-address').querySelector('code').textContent, this)" class="copy-btn" aria-label="Copy Ethereum address">
+          <img src="ETH.gif" />
+          <code>0x507A5f6b786D44Aa324Cee16e645FA51Ed522aC2</code>
+          <button onclick="copyToClipboard('0x507A5f6b786D44Aa324Cee16e645FA51Ed522aC2', this)" class="copy-btn" aria-label="Copy Ethereum address">
             <span class="copy-icon">📋</span>
             <span class="copy-text">Copy</span>
           </button>
@@ -1362,14 +1294,18 @@
       <div class="modal-section">
         <h3>Solana (SOL)</h3>
         <div class="wallet-address">
-          <img id="donateSolImg" src="SOL.gif" />
-          <code id="donateSolCode"></code>
-          <button onclick="copyToClipboard(this.closest('.wallet-address').querySelector('code').textContent, this)" class="copy-btn" aria-label="Copy Solana address">
+          <div class="">
+            <img src="SOL.gif" />
+          </div>
+          <code>37q4SYfPrigwySEgb9i8YmpHKiAMKXuHKjqwLnABzf8i</code>
+          <button onclick="copyToClipboard('37q4SYfPrigwySEgb9i8YmpHKiAMKXuHKjqwLnABzf8i', this)" class="copy-btn" aria-label="Copy Solana address">
             <span class="copy-icon">📋</span>
             <span class="copy-text">Copy</span>
           </button>
         </div>
       </div>
+
+      
     </div>
   </div>
 
@@ -1413,7 +1349,7 @@
 
       <div class="modal-section">
         <h3>6. Limitations</h3>
-        <p id="termsLimitations">In no event shall the copyright owner or its suppliers be liable for any damages arising out of the use or inability to use the materials on this website.</p>
+        <p>In no event shall YChive or its suppliers be liable for any damages arising out of the use or inability to use the materials on this website.</p>
       </div>
     </div>
   </div>
@@ -1448,7 +1384,7 @@
 
       <div class="modal-section">
         <h3>Third-Party Services</h3>
-        <p><strong>Google Analytics:</strong> If you consent to cookies, Google Analytics may collect anonymous usage statistics including pages visited, time spent, and browser type.</p>
+        <p><strong>Google Analytics:</strong> If you consent to cookies, Google Analytics may collect anonymous usage statistics including pages visited, time spent, and browser type. This helps us understand how the site is used.</p>
         <p><strong>IPFS Network:</strong> Content is delivered via decentralized IPFS nodes. Your IP address may be visible to nodes serving content, inherent to peer-to-peer networks.</p>
       </div>
 
@@ -1487,98 +1423,8 @@
   <audio id="audioElement" preload="metadata" crossorigin="anonymous"></audio>
 
   <script>
-// Populate dynamic content from ALBUM_CONFIG
-function populatePage() {
-  // Head meta
-  document.title = ALBUM_CONFIG.name + ' - Music Album';
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.content = ALBUM_CONFIG.name + ' - A Beautiful Treasure. ' + ALBUM_CONFIG.description;
-  const metaTheme = document.querySelector('meta[name="theme-color"]');
-  if (metaTheme) metaTheme.content = ALBUM_CONFIG.colors.primaryPurple;
-
-  // Google Fonts
-  const fontsLink = document.createElement('link');
-  fontsLink.rel = 'stylesheet';
-  fontsLink.href = ALBUM_CONFIG.googleFontsUrl;
-  document.head.appendChild(fontsLink);
-
-  // Background image
-  document.getElementById('bgVideo').src = ALBUM_CONFIG.bgImage;
-
-  // Header
-  document.getElementById('albumTitle').textContent = ALBUM_CONFIG.name;
-  document.getElementById('albumSubtitle').textContent = ALBUM_CONFIG.subtitle + ' \u2014 ' + ALBUM_CONFIG.domain;
-
-  // Download section
-  const dlLink = document.getElementById('downloadLink');
-  dlLink.href = ALBUM_CONFIG.downloadUrl;
-  document.getElementById('downloadDesc').textContent =
-    'Get the complete ' + ALBUM_CONFIG.name.toLowerCase() + ' album with all tracks and lyrics';
-  document.getElementById('downloadTrackCount').textContent = ALBUM_CONFIG.downloadTracks + ' Tracks';
-  document.getElementById('downloadSizeDisplay').textContent = ALBUM_CONFIG.downloadSize;
-
-  // Footer links
-  document.getElementById('footerArchiveLink').href = ALBUM_CONFIG.archiveUrl;
-  document.getElementById('footerImagesLink').href = ALBUM_CONFIG.imagesUrl;
-  const footerSecond = document.getElementById('footerSecondAlbumLink');
-  footerSecond.href = ALBUM_CONFIG.secondAlbumUrl;
-  footerSecond.textContent = ALBUM_CONFIG.secondAlbumLabel;
-  document.getElementById('footerCopyright').innerHTML =
-    '\u00a9 ' + ALBUM_CONFIG.copyrightYear + ' ' + ALBUM_CONFIG.copyrightOwner + '. All rights reserved.';
-
-  // About modal — More Sites
-  document.getElementById('aboutArchiveLink').href = ALBUM_CONFIG.archiveUrl;
-  document.getElementById('aboutImagesLink').href = ALBUM_CONFIG.imagesUrl;
-  const aboutSecond = document.getElementById('aboutSecondAlbumLink');
-  aboutSecond.href = ALBUM_CONFIG.secondAlbumUrl;
-  aboutSecond.textContent = ALBUM_CONFIG.secondAlbumLabel + ' - Music tracks';
-
-  // About modal — version / metadata
-  document.getElementById('aboutCurrentCid').textContent = ALBUM_CONFIG.currentCid;
-  document.getElementById('aboutMeta').innerHTML =
-    '<strong>Published:</strong> ' + ALBUM_CONFIG.publishedDate + '<br>' +
-    '<strong>Protocol:</strong> IPFS (InterPlanetary File System)<br>' +
-    '<strong>Network:</strong> Decentralized peer-to-peer storage<br>' +
-    '<strong>Tracks:</strong> ' + ALBUM_CONFIG.totalTracks + '<br>' +
-    '<strong>Total Size:</strong> ' + ALBUM_CONFIG.totalSize;
-  const prevLink = document.getElementById('aboutPrevLink');
-  prevLink.href = 'https://ipfs.io/ipfs/' + ALBUM_CONFIG.prevCid + '/';
-  prevLink.innerHTML = '<span style="opacity:0.7">\u2190</span> ' + ALBUM_CONFIG.prevLabel;
-  const nextLink = document.getElementById('aboutNextLink');
-  nextLink.href = 'https://ipfs.io/ipfs/' + ALBUM_CONFIG.nextCid + '/';
-  nextLink.innerHTML = ALBUM_CONFIG.nextLabel + ' <span style="opacity:0.7">\u2192</span>';
-
-  // Terms modal — replace hardcoded owner name
-  const termsLimit = document.getElementById('termsLimitations');
-  if (termsLimit) {
-    termsLimit.textContent = 'In no event shall ' + ALBUM_CONFIG.copyrightOwner + ' or its suppliers be liable for any damages arising out of the use or inability to use the materials on this website.';
-  }
-
-  // Donate modal
-  document.getElementById('donateBtcImg').src = ALBUM_CONFIG.btcImage;
-  document.getElementById('donateBtcCode').textContent = ALBUM_CONFIG.btcAddress;
-  document.getElementById('donateEthImg').src = ALBUM_CONFIG.ethImage;
-  document.getElementById('donateEthCode').textContent = ALBUM_CONFIG.ethAddress;
-  document.getElementById('donateSolImg').src = ALBUM_CONFIG.solImage;
-  document.getElementById('donateSolCode').textContent = ALBUM_CONFIG.solAddress;
-
-  // GA4 (only if id is set)
-  if (ALBUM_CONFIG.ga4Id) {
-    const gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + ALBUM_CONFIG.ga4Id;
-    document.head.appendChild(gaScript);
-    const gaInline = document.createElement('script');
-    gaInline.textContent = 'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","' + ALBUM_CONFIG.ga4Id + '");';
-    document.head.appendChild(gaInline);
-  }
-}
-
-const FEATURED_ID = ALBUM_CONFIG.featuredId;
-const STATE_KEY   = ALBUM_CONFIG.swCacheName + '_state';
-const CACHE_AUDIO = ALBUM_CONFIG.swCacheName + '-audio';
-const CACHE_LYRICS= ALBUM_CONFIG.swCacheName + '-lyrics';
-
+    window.sitename = '1234567890';
+const FEATURED_ID = 21;
 const LANG_NAMES = {
   all: 'All Languages',
   en: 'English',
@@ -1717,14 +1563,12 @@ function renderTrackList() {
     div.className = 'track-item' + (track.a === 1 ? ' is-alt' : '');
     if (index === state.currentIndex) div.classList.add('playing');
 
-    const trackPath = ALBUM_CONFIG.trackPrefix + 'tracks-' + track.lang + '-' + track.f;
-
     div.innerHTML = `
       <div class="track-number">${track.i}</div>
       <div class="track-title">${track.t}</div>
       ${track.a === 1 ? '<span class="track-alt-label">ALT</span>' : ''}
       ${state.language === 'all' ? `<span class="track-lang-label">${LANG_NAMES[track.lang] || track.lang}</span>` : ''}
-      <span class="offline-badge" data-track="${trackPath}" style="display:none">
+      <span class="offline-badge" data-track="tracks-${track.lang}-${track.f}" style="display:none">
         <svg width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
           <path d="M10.5 8a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
           <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z"/>
@@ -1732,7 +1576,7 @@ function renderTrackList() {
         Offline
       </span>
       <button class="play-btn-small">${index === state.currentIndex && state.isPlaying ? '⏸' : '▶'}</button>
-      <a href="${trackPath}" download="${track.f}" class="download-btn-small" title="Download" onclick="event.stopPropagation()">
+      <a href="${state.hostname === window.sitename ? `${track.d}/${track.f}` : `${track.f}`}" download="tracks-${track.lang}-${track.f}" class="download-btn-small" title="Download" onclick="event.stopPropagation()">
         <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
           <path d="M8 12L3 7h3V1h4v6h3z"/>
           <path d="M1 14h14v2H1z"/>
@@ -1741,13 +1585,17 @@ function renderTrackList() {
     `;
 
     div.addEventListener('click', (e) => {
-      if (e.target.closest('.download-btn-small')) return;
+      // Prevent playback if download button or its SVG was clicked
+      if (e.target.closest('.download-btn-small')) {
+        return;
+      }
       playTrack(index);
     });
 
     container.appendChild(div);
   });
 
+  // After rendering all tracks, update offline indicators
   updateOfflineIndicators();
 }
 
@@ -1758,50 +1606,60 @@ function playTrack(index) {
   state.currentIndex = index;
   const track = state.tracks[index];
 
-  // Fallback chain: track CID (if present), then local prefix path
+  // Fallback CID chain for resilient loading
   const fallbackCIDs = [
-    track.d || null,              // Primary CID from track data (may be absent)
-    ALBUM_CONFIG.trackPrefix      // Local / relative path
-  ].filter(v => v !== null);
-
-  // Ensure we always have at least the local path
-  if (fallbackCIDs.length === 0) fallbackCIDs.push(ALBUM_CONFIG.trackPrefix);
+    typeof track.d !== 'undefined' && track.d ? track.d : '', // Primary CID (from track data)
+    ''  // asteroid.pilot
+  ];
 
   let currentFallback = 0;
 
   function tryLoadAudio() {
     if (currentFallback < fallbackCIDs.length) {
       const cidUrl = fallbackCIDs[currentFallback];
-      audio.src = cidUrl + 'tracks-' + track.lang + '-' + track.f;
-      console.log(`Attempting to load from fallback ${currentFallback + 1}/${fallbackCIDs.length}: ${cidUrl}`);
+      audio.src = `${cidUrl}/${track.f}`;
+      console.log(`Attempting to load from CID ${currentFallback + 1}/${fallbackCIDs.length}: ${cidUrl}`);
 
-      audio.onerror = function() {
-        console.log(`Failed to load from ${cidUrl}, trying next...`);
+      audio.onerror = function(e) {
+        console.log(`Failed to load from ${cidUrl}, trying next fallback...`);
         currentFallback++;
         tryLoadAudio();
       };
 
       audio.onloadeddata = function() {
-        console.log(`✓ Loaded: ${audio.src}`);
+        console.log(`✓ Successfully loaded from: ${cidUrl}`);
         audio.onerror = null;
         audio.onloadeddata = null;
       };
 
-      audio.play().catch(() => {});
+      audio.play().catch(() => {
+        // Play might fail, but that's okay - let the error handler deal with it
+      });
     } else {
-      console.error('❌ All loading attempts failed for track:', track.f);
+      // All CID attempts failed, try relative path as final fallback
+      console.log('All CID attempts failed, trying relative path...');
+      audio.src = `tracks-${track.lang}-${track.f}`;
+      audio.onerror = function(e) {
+        console.error('❌ All loading attempts failed for track:', track.f);
+      };
+      audio.play().catch(() => {
+        console.error('Failed to play from relative path');
+      });
     }
   }
 
+  // Start the fallback chain
   tryLoadAudio();
 
   state.isPlaying = true;
+
   updateTrackInfo();
   renderTrackList();
   loadLyricsWithFallback(track, track.lang, fallbackCIDs);
   updateUrlParams(index);
   saveState();
 
+  // Update cache indicators after track starts playing
   setTimeout(() => {
     updateCacheInfo();
     updateOfflineIndicators();
@@ -1826,6 +1684,7 @@ function updateTrackInfo() {
     badges += '<span class="alt-badge">ALTERNATE</span>';
   }
   document.getElementById('trackBadges').innerHTML = badges;
+
   document.getElementById('playPauseBtn').textContent = '⏸';
 }
 
@@ -1834,35 +1693,56 @@ async function loadLyricsWithFallback(track, lang, fallbackCIDs) {
   const lyricsText = document.getElementById('lyricsText');
   lyricsText.innerHTML = '<div class="lyrics-loading">Loading lyrics...</div>';
 
-  const lyricsMap = window.LYRICS && window.LYRICS[lang];
-  if (!lyricsMap || !lyricsMap[track.i]) {
-    lyricsText.innerHTML = '<div class="lyrics-unavailable">Lyrics not available for this track</div>';
-    return;
-  }
+  // const lyricsMap = LYRICS[lang];
+  // if (!lyricsMap || !lyricsMap[track.i]) {
+  //   lyricsText.innerHTML = '<div class="lyrics-unavailable">Lyrics not available for this track</div>';
+  //   return;
+  // }
 
-  const filename = lyricsMap[track.i];
+  // const filename = lyricsMap[track.i];
+  const filename = track.l;
 
+  // Try each fallback CID in order
   for (let i = 0; i < fallbackCIDs.length; i++) {
     try {
       const cidUrl = fallbackCIDs[i];
-      const resp = await fetch(cidUrl + ALBUM_CONFIG.lyricsPrefix + 'lyrics-' + lang + '-' + filename);
+      console.log(`Attempting to load lyrics from CID ${i + 1}/${fallbackCIDs.length}: ${cidUrl}`);
+      const resp = await fetch(`${cidUrl}/${filename}`);
+
       if (resp.ok) {
         const text = await resp.text();
         lyricsText.innerHTML = `<pre>${text}</pre>`;
-        console.log(`✓ Loaded lyrics from: ${cidUrl}`);
+        console.log(`✓ Successfully loaded lyrics from: ${cidUrl}`);
         return;
       }
     } catch (err) {
-      console.log(`Failed to load lyrics from fallback ${i + 1}`);
+      console.log(`Failed to load lyrics from fallback ${i + 1}, trying next...`);
     }
+  }
+
+  // All CID attempts failed, try relative path as final fallback
+  try {
+    console.log('All CID attempts failed for lyrics, trying relative path...');
+    const resp = await fetch(`${filename}`);
+    if (resp.ok) {
+      const text = await resp.text();
+      lyricsText.innerHTML = `<pre>${text}</pre>`;
+      console.log('✓ Successfully loaded lyrics from relative path');
+      return;
+    }
+  } catch (err) {
+    console.error('❌ All loading attempts failed for lyrics');
   }
 
   lyricsText.innerHTML = '<div class="lyrics-unavailable">Could not load lyrics</div>';
 }
 
+// Keep old function for backward compatibility (used in language selector)
 async function loadLyrics(track, lang) {
-  const fallbackCIDs = [track.d || null, ALBUM_CONFIG.trackPrefix].filter(v => v !== null);
-  if (!fallbackCIDs.length) fallbackCIDs.push(ALBUM_CONFIG.trackPrefix);
+  const fallbackCIDs = [
+    track.d,
+    ''
+  ];
   await loadLyricsWithFallback(track, lang, fallbackCIDs);
 }
 
@@ -1967,6 +1847,7 @@ audio.addEventListener('ended', () => {
     document.getElementById('playPauseBtn').textContent = '▶';
   }
 
+  // Pre-cache the next track
   preCacheNextTrack();
 });
 
@@ -2030,7 +1911,7 @@ document.getElementById('lyricsToggle').addEventListener('click', () => {
 // Share buttons
 document.getElementById('shareTwitter').addEventListener('click', () => {
   const url = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent(ALBUM_CONFIG.shareText);
+  const text = encodeURIComponent('Check out unicorns - A beautiful treasure');
   window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
 });
 
@@ -2041,7 +1922,7 @@ document.getElementById('shareFacebook').addEventListener('click', () => {
 
 document.getElementById('shareWhatsapp').addEventListener('click', () => {
   const url = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent(ALBUM_CONFIG.shareText);
+  const text = encodeURIComponent('Check out unicorns - A beautiful treasure');
   window.open(`https://wa.me/?text=${text}%20${url}`, '_blank');
 });
 
@@ -2050,7 +1931,9 @@ document.getElementById('shareCopy').addEventListener('click', async () => {
     await navigator.clipboard.writeText(window.location.href);
     const btn = document.getElementById('shareCopy');
     btn.style.background = 'rgba(16, 185, 129, 0.3)';
-    setTimeout(() => { btn.style.background = ''; }, 1000);
+    setTimeout(() => {
+      btn.style.background = '';
+    }, 1000);
   } catch (err) {
     console.log('Failed to copy:', err);
   }
@@ -2060,8 +1943,8 @@ document.getElementById('shareCopy').addEventListener('click', async () => {
 document.getElementById('clearCacheBtn')?.addEventListener('click', async () => {
   if (confirm('Clear all cached audio and lyrics? This will free up space but you\'ll need to re-download tracks for offline use.')) {
     try {
-      await caches.delete(CACHE_AUDIO);
-      await caches.delete(CACHE_LYRICS);
+      await caches.delete('v1.0.0-tracks');
+      await caches.delete('v1.0.0-lyrics');
       alert('✅ Cache cleared successfully!');
       updateCacheInfo();
       updateOfflineIndicators();
@@ -2073,7 +1956,7 @@ document.getElementById('clearCacheBtn')?.addEventListener('click', async () => 
 
 // State persistence
 function saveState() {
-  localStorage.setItem(STATE_KEY, JSON.stringify({
+  localStorage.setItem('unicorns_state', JSON.stringify({
     language: state.language,
     currentIndex: state.currentIndex,
     shuffle: state.shuffle,
@@ -2085,7 +1968,7 @@ function saveState() {
 
 function loadState() {
   try {
-    const saved = localStorage.getItem(STATE_KEY);
+    const saved = localStorage.getItem('unicorns_state');
     if (saved) {
       const data = JSON.parse(saved);
       state.language = data.language || 'en';
@@ -2150,10 +2033,11 @@ async function updateCacheInfo() {
   }
 }
 
+// Update offline indicators on track list
 async function updateOfflineIndicators() {
   if (!('caches' in window)) return;
   try {
-    const cache = await caches.open(CACHE_AUDIO);
+    const cache = await caches.open('v1.0.0-tracks');
     const requests = await cache.keys();
     const cachedFiles = requests.map(req => new URL(req.url).pathname.split('/').pop());
 
@@ -2166,6 +2050,7 @@ async function updateOfflineIndicators() {
   }
 }
 
+// Pre-cache next track for offline playback
 function preCacheNextTrack() {
   if (!('serviceWorker' in navigator) || !navigator.serviceWorker.controller) return;
 
@@ -2175,7 +2060,8 @@ function preCacheNextTrack() {
 
   if (nextIndex >= 0 && nextIndex < state.tracks.length) {
     const nextTrack = state.tracks[nextIndex];
-    const url = (nextTrack.d || ALBUM_CONFIG.trackPrefix) + 'tracks-' + state.language + '-' + nextTrack.f;
+    // Use full IPFS URL format, matching what playTrack uses
+    const url = `${nextTrack.d}/${nextTrack.f}`;
 
     navigator.serviceWorker.controller.postMessage({
       action: 'preCacheTrack',
@@ -2202,6 +2088,43 @@ document.getElementById('cookieDecline').addEventListener('click', () => {
   document.getElementById('cookieConsent').style.display = 'none';
 });
 
+(async function () {
+  try {
+    const resp = await fetch(`tracks.json`);
+    if (resp.ok) {
+      window.TRACKS = await resp.json();
+    }
+  } catch (err) {
+    console.error(`Failed to load tracks.json`);
+  }
+  try {
+    const resp = await fetch(`lyrics.json`);
+    if (resp.ok) {
+      window.LYRICS = await resp.json();
+    }
+  } catch (err) {
+    console.error(`Failed to load lyrics.json`);
+  }
+  // Initialize
+  // initVideo();
+  loadState();
+  loadTracks();
+  initCookieConsent();
+})()
+
+// Load from URL parameters after tracks are loaded
+const urlParams = parseUrlParams();
+if (urlParams.trackId !== null) {
+  // Find track by ID
+  const trackIndex = state.tracks.findIndex(t => t.i === urlParams.trackId);
+  if (trackIndex !== -1) {
+    // Delay playback slightly to ensure everything is loaded
+    setTimeout(() => {
+      playTrack(trackIndex);
+    }, 500);
+  }
+}
+
 // Language selector
 document.getElementById('langSelector').addEventListener('change', (e) => {
   state.language = e.target.value;
@@ -2214,48 +2137,6 @@ document.getElementById('langSelector').addEventListener('change', (e) => {
   }
   saveState();
 });
-
-// Init
-(async function init() {
-  populatePage();
-
-  try {
-    const resp = await fetch('tracks.json');
-    if (resp.ok) window.TRACKS = await resp.json();
-  } catch (err) {
-    console.error('Failed to load tracks.json');
-    window.TRACKS = {};
-  }
-
-  try {
-    const resp = await fetch('lyrics.json');
-    if (resp.ok) window.LYRICS = await resp.json();
-  } catch (err) {
-    console.error('Failed to load lyrics.json');
-    window.LYRICS = {};
-  }
-
-  // initVideo();
-  loadState();
-  loadTracks();
-  initCookieConsent();
-
-  // URL parameter — auto-play a specific track
-  const urlParams = parseUrlParams();
-  if (urlParams.language && urlParams.language !== 'en') {
-    state.language = urlParams.language;
-    document.getElementById('langSelector').value = state.language;
-    loadTracks();
-    saveState();
-  }
-
-  if (urlParams.trackId !== null) {
-    const trackIndex = state.tracks.findIndex(t => t.i === urlParams.trackId);
-    if (trackIndex !== -1) {
-      setTimeout(() => { playTrack(trackIndex); }, 500);
-    }
-  }
-})();
   </script>
 </body>
 </html>
